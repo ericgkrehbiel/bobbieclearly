@@ -3,30 +3,23 @@
 html, body {
   height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   background: #262626 url('website headline visual.png') center/cover no-repeat;
   perspective: 800px;
 }
 
-/* one full‑viewport slide per section */
-.scene {}
-.slide {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* scene height will be set dynamically by JS */
+.scene { }
 
-/* hidden initial state */
-.text {
+/* fixed, centered text */
+.text-fixed {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) translateZ(-200px) scale(0.5);
+  opacity: 0;
   font-size: 2rem;
   color: #fff;
-  transform: scale(0.5) translateZ(-200px);
-  opacity: 0;
-  transition: transform 1s ease-out, opacity 1s ease-out;
+  white-space: nowrap;
+  will-change: transform, opacity;
 }
 
-/* active (zoom in) */
-.text.active {
-  transform: scale(1.2) translateZ(0);
-  opacity: 1;
-}
