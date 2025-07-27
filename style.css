@@ -1,7 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
   height:100%;overflow-x:hidden;overflow-y:auto;
-  background:#222 url('path/to/your-backdrop.jpg') center/cover no-repeat;
+  background:#262626 url('website headline visual.png') center/cover no-repeat;
 }
 .scene{}
 .text-fixed{
