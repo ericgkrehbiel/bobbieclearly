@@ -1,29 +1,38 @@
-/* Static backdrop and 3D perspective */
-body {
+/* Make sure body scrolls vertically */
+html, body {
   margin: 0;
-  height: 100vh;
+  padding: 0;
+  min-height: 100vh;
   overflow-x: hidden;
-  background: url('path/to/your-backdrop.jpg') center/cover no-repeat;
+  overflow-y: auto;
+  background: #222; /* fallback background color */
   perspective: 800px;
 }
 
-/* Container tall enough to scroll through slides */
-.scene {
-  position: relative;
-  height: 400vh;
+/* Static backdrop (replace with your image path) */
+body {
+  background: url('path/to/your-backdrop.jpg') center/cover no-repeat;
 }
 
-/* Text slides centered and hidden by default */
+/* Container tall enough to scroll through all slides */
+.scene {
+  position: relative;
+  /* automatically size to number of slides */
+  height: calc(100vh * attr(data-slides number));
+}
+
+/* Centered text slides, visible by default in black */
 .text-slide {
   position: sticky;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%) scale(0.5) translateZ(-200px);
   opacity: 0;
   font-size: 2rem;
-  color: white;
+  color: #fff;
   text-align: center;
   transition: transform 1s ease-out, opacity 1s ease-out;
+  /* for debugging, visible border */
+  /* border: 1px dashed lime; */
 }
 
 /* Active slide zooms in and fades in */
