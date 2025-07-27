@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const lines = gsap.utils.toArray('.line');
 const duration = 1;              // seconds for each fade‑in/out
-const spacing = 400;             // ↑ increase this to slow down scroll mapping
+const spacing = 600;             // ↑ increase this to slow down scroll mapping
 const totalScroll = (duration * 2) * lines.length * spacing;
 
 const tl = gsap.timeline({
