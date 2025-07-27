@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ▷ SECTION 1: pinned hero with new background & lines -->
   <section class="hero">
     <div class="background"></div>
     <div class="text-container">
@@ -23,6 +24,25 @@
     </div>
   </section>
 
+    <!-- ▷ SECTION 2: normal scroll text block -->
+  <section class="text-block">
+    <div class="block-container">
+      <p class="section-text">
+        Here’s your new block of text. It will scroll in normally, scale up slightly as you scroll…
+      </p>
+    </div>
+  </section>
+
+  <!-- ▷ SECTION 3: pinned hero with new background & lines -->
+  <section class="hero hero2">
+    <div class="background" style="background-image:url('image2.jpg')"></div>
+    <div class="text-container">
+      <p class="line">Another line 1</p>
+      <!-- … as many as you like … -->
+      <p class="line">Another line 5</p>
+    </div>
+  </section>
+  
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
