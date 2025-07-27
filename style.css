@@ -1,19 +1,17 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
-  height:100%;
-  overflow-x:hidden;
-  overflow-y:auto;
-  background:#262626 url('website headline visual.png') center/cover no-repeat;
-  perspective:800px;
+  height:100%;overflow-x:hidden;overflow-y:auto;
+  background:#222 url('path/to/your-backdrop.jpg') center/cover no-repeat;
 }
 .scene{}
 .text-fixed{
-  position:fixed; top:50%; left:50%;
-  transform:translate(-50%,-50%) translateZ(-200px) scale(0.5);
+  position:fixed;top:50%;left:50%;
+  /* simplify to 2D for now */
+  transform:translate(-50%,-50%) scale(0.5);
   opacity:0;
-  font-size:2rem;
-  color:#fff;
-  white-space:nowrap;
+  font-size:2rem;color:#fff;white-space:nowrap;
   will-change:transform,opacity;
   z-index:10;
+  /* debug: visible box */
+  background:rgba(255,0,0,0.2);padding:10px;
 }
