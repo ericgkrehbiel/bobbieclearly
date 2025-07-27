@@ -1,42 +1,32 @@
-/* Make sure body scrolls vertically */
+/* reset + backdrop + 3D */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  background: #262626; /* fallback background color */
+  background: #262626 url('website headline visual.png') center/cover no-repeat;
   perspective: 800px;
 }
 
-/* Static backdrop (replace with your image path) */
-body {
-  background: url('website headline visual.png') center/cover no-repeat;
+/* one full‑viewport slide per section */
+.scene {}
+.slide {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Container tall enough to scroll through all slides */
-.scene {
-  position: relative;
-  /* automatically size to number of slides */
-  height: calc(100vh * attr(data-slides number));
-}
-
-/* Centered text slides, visible by default in black */
-.text-slide {
-  position: sticky;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(0.5) translateZ(-200px);
-  opacity: 0;
+/* hidden initial state */
+.text {
   font-size: 2rem;
   color: #fff;
-  text-align: center;
+  transform: scale(0.5) translateZ(-200px);
+  opacity: 0;
   transition: transform 1s ease-out, opacity 1s ease-out;
-  /* for debugging, visible border */
-  /* border: 1px dashed lime; */
 }
 
-/* Active slide zooms in and fades in */
-.text-slide.active {
-  transform: translate(-50%, -50%) scale(1.2) translateZ(0);
+/* active (zoom in) */
+.text.active {
+  transform: scale(1.2) translateZ(0);
   opacity: 1;
 }
