@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zoom Text Scroll</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="scene" data-slides="3">
-    <div class="text-slide">First line of text</div>
-    <div class="text-slide">Second line of text</div>
-    <div class="text-slide">Third line of text</div>
+  <div class="scene">
+    <section class="slide">
+      <div class="text">First line of text</div>
+    </section>
+    <section class="slide">
+      <div class="text">Second line of text</div>
+    </section>
+    <section class="slide">
+      <div class="text">Third line of text</div>
+    </section>
+    <!-- Add more <section class="slide">…</section> as needed -->
   </div>
-
-  <!-- Quick check that script is loading -->
-  <script>
-    console.log('index.html loaded');
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
