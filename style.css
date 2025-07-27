@@ -15,7 +15,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #262626 url('website headline visual.png') center/cover no-repeat;
+  background: #262626 url('second visual.png') center/cover no-repeat;
   z-index: 0; /* behind the text */
 }
 
