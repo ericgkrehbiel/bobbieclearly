@@ -38,3 +38,7 @@ body {
   transform: scale(1);
   color: white;           /* make text white */
 }
+
+.first-line {
+  font-family: "bebas-neue", sans‑serif;
+}
