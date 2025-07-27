@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
   const heroDuration = 1;     // seconds per in/out
-  const heroSpacing  = 400;   // px per second of scrub
+  const heroSpacing  = 900;   // px per second of scrub
 
   // helper to wire up a "hero" section
   function setupHero(selector) {
