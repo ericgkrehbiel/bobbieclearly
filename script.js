@@ -1,75 +1,73 @@
 // script.js
 gsap.registerPlugin(ScrollTrigger);
 
-// ─── SECTION 1 HERO ──────────────────────────────────────────────────────────
-const hero1Lines = gsap.utils.toArray('.hero1 .line');
-const heroDuration = 1;
-const heroSpacing  = 400;
-const hero1Segments = 1 + (hero1Lines.length - 1) * 2;
-const hero1Scroll   = hero1Segments * heroDuration * heroSpacing;
+window.addEventListener('load', () => {
+  const heroDuration = 1;     // seconds per in/out
+  const heroSpacing  = 400;   // px per second of scrub
 
-// make first line visible at load
-gsap.set(hero1Lines[0], { opacity: 1, scale: 1.5 });
+  // helper to wire up a "hero" section
+  function setupHero(selector) {
+    const lines    = gsap.utils.toArray(`${selector} .line`);
+    const segments = 1 + (lines.length - 1) * 2;      // first line only has fade‑out, others have in+out
+    const totalScroll = segments * heroDuration * heroSpacing;
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.hero1',
-    start:   'top top',
-    end:     () => `+=${hero1Scroll}`,
-    pin:     true,
-    scrub:   true,
-    invalidateOnRefresh: true,
-    //markers: true,
+    // make the first line visible & scaled on load
+    gsap.set(lines[0], { opacity: 1, scale: 1.5 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: selector,
+        start:   'top top',
+        end:     () => `+=${totalScroll}`,
+        pin:     true,
+        scrub:   true,
+        invalidateOnRefresh: true,
+        markers: false   // turn on for debugging if you like
+      }
+    });
+
+    lines.forEach((el, i) => {
+      if (i === 0) {
+        // only fade‑out & zoom‑out
+        tl.to(el, {
+          opacity: 0,
+          scale:   2,
+          duration: heroDuration,
+          ease:    'power1.inOut'
+        });
+      } else {
+        // fade‑in + zoom‑in
+        tl.fromTo(el,
+          { opacity: 0, scale: 1 },
+          { opacity: 1, scale: 1.5, duration: heroDuration, ease: 'power1.inOut' }
+        );
+        // then fade‑out + zoom‑out
+        tl.to(el, {
+          opacity: 0,
+          scale:   2,
+          duration: heroDuration,
+          ease:    'power1.inOut'
+        });
+      }
+    });
   }
-})
-  .addLabel('hero1Start')
-  .add(hero1Lines.map((el,i) => {
-    if (i===0) {
-      return gsap.to(el, { opacity: 0, scale: 2, duration: heroDuration, ease: 'power1.inOut' });
-    } else {
-      return gsap.timeline()
-        .fromTo(el, { opacity:0, scale:1 }, { opacity:1, scale:1.5, duration:heroDuration, ease:'power1.inOut' })
-        .to(   el, { opacity:0, scale:2, duration:heroDuration, ease:'power1.inOut' }, '+=0');
-    }
-  }), 'hero1Start');
 
-// ─── SECTION 2 NORMAL TEXT ───────────────────────────────────────────────────
-gsap.to('.section-text', {
-  scrollTrigger: {
-    trigger: '.text-block',
-    start:  'top 80%',     // when top of block hits 80% down viewport
-    end:    'bottom 20%',  // until bottom hits 20% up
-    scrub:  true,
-  },
-  scale: 1.1,             // zoom up 10%
-  ease:  'none'
+  // wire up both hero sections
+  setupHero('.hero1');
+  setupHero('.hero2');
+
+  // section 2 “normal text” stays the same
+  gsap.to('.section-text', {
+    scrollTrigger: {
+      trigger: '.text-block',
+      start:  'top 80%',
+      end:    'bottom 20%',
+      scrub:  true
+    },
+    scale: 1.1,
+    ease:  'none'
+  });
+
+  // ensure ScrollTrigger recalcs after everything’s loaded
+  ScrollTrigger.refresh();
 });
-
-// ─── SECTION 3 HERO ──────────────────────────────────────────────────────────
-const hero2Lines = gsap.utils.toArray('.hero2 .line');
-const hero2Segments = 1 + (hero2Lines.length - 1) * 2;
-const hero2Scroll   = hero2Segments * heroDuration * heroSpacing;
-
-gsap.set(hero2Lines[0], { opacity: 1, scale: 1.5 });
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.hero2',
-    start:   'top top',
-    end:     () => `+=${hero2Scroll}`,
-    pin:     true,
-    scrub:   true,
-    invalidateOnRefresh: true,
-    //markers: true,
-  }
-})
-  .addLabel('hero2Start')
-  .add(hero2Lines.map((el,i) => {
-    if (i===0) {
-      return gsap.to(el, { opacity: 0, scale: 2, duration: heroDuration, ease: 'power1.inOut' });
-    } else {
-      return gsap.timeline()
-        .fromTo(el, { opacity:0, scale:1 }, { opacity:1, scale:1.5, duration:heroDuration, ease:'power1.inOut' })
-        .to(   el, { opacity:0, scale:2, duration:heroDuration, ease:'power1.inOut' }, '+=0');
-    }
-  }), 'hero2Start');
