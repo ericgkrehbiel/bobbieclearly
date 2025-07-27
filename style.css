@@ -1,7 +1,7 @@
 /* make body tall enough to scroll past the hero */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: gotham, sans-serif;
   min-height: 200vh;
 }
 
@@ -40,5 +40,5 @@ body {
 }
 
 .first-line {
-  font-family: "bebas-neue", sans‑serif;
+  font-family: bebas-neue, sans‑serif;
 }
