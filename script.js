@@ -1,42 +1,27 @@
-const slides = [
-  'First line of text',
-  'Second line of text',
-  'Third line of text',
-  'Fourth line of text',
-  'Fifth line of text',
-  'Sixth line of text',
-  'Seventh line of text'
-];
+gsap.registerPlugin(ScrollTrigger);
 
-const scene = document.querySelector('.scene');
-const textEl = document.querySelector('.text-fixed');
-const total = slides.length;
+const lines = gsap.utils.toArray('.line');
+const duration = 1;            // seconds for each in/out
+const spacing = 100;           // pixels per second to map scrubbing
+const totalScroll = (duration * 2) * lines.length * spacing;
 
-// make the scene tall enough so each slide occupies one viewport height
-scene.style.height = `${total * window.innerHeight}px`;
-
-function onScroll() {
-  const y = window.scrollY;
-  const h = window.innerHeight;
-
-  const idx = Math.floor(y / h);
-  const prog = (y % h) / h;
-
-  if (idx >= 0 && idx < total) {
-    textEl.textContent = slides[idx];
-
-    const scale = 0.5 + (1.2 - 0.5) * prog;
-
-    let opacity = 1;
-    if (prog < 0.2) opacity = prog / 0.2;
-    else if (prog > 0.8) opacity = (1 - prog) / 0.2;
-
-    textEl.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(2)})`;
-    textEl.style.opacity = opacity.toFixed(2);
-  } else {
-    textEl.style.opacity = 0;
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.hero',
+    start: 'top top',
+    end: `+=${totalScroll}`,
+    pin: true,
+    scrub: true,
   }
-}
+});
 
-window.addEventListener('scroll', onScroll);
-window.dispatchEvent(new Event('scroll'));
+lines.forEach((el) => {
+  tl.fromTo(el,
+    { opacity: 0, scale: 1 },
+    { opacity: 1, scale: 1.5, duration, ease: 'power1.inOut' }
+  )
+  .to(el,
+    { opacity: 0, scale: 2, duration, ease: 'power1.inOut' },
+    `+=0`
+  );
+});
