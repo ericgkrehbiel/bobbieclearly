@@ -1,0 +1,33 @@
+/* Static backdrop and 3D perspective */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  background: url('path/to/your-backdrop.jpg') center/cover no-repeat;
+  perspective: 800px;
+}
+
+/* Container tall enough to scroll through slides */
+.scene {
+  position: relative;
+  height: 400vh;
+}
+
+/* Text slides centered and hidden by default */
+.text-slide {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5) translateZ(-200px);
+  opacity: 0;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Active slide zooms in and fades in */
+.text-slide.active {
+  transform: translate(-50%, -50%) scale(1.2) translateZ(0);
+  opacity: 1;
+}
