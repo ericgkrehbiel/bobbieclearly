@@ -11,7 +11,7 @@ html, body {
 
 /* Static backdrop (replace with your image path) */
 body {
-  background: url('path/to/your-backdrop.jpg') center/cover no-repeat;
+  background: url('website headline visual.png') center/cover no-repeat;
 }
 
 /* Container tall enough to scroll through all slides */
