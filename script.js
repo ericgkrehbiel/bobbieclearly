@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const lines = gsap.utils.toArray('.line');
 const duration = 1;        // seconds per animation segment
-const spacing = 700;       // pixels-per-second scaling for scrub (↑ increase to slow further)
+const spacing = 900;       // pixels-per-second scaling for scrub (↑ increase to slow further)
 
 // Calculate how many segments in the timeline:
 //  - the first line only has a fade‑out (1 segment)
