@@ -1,18 +1,22 @@
-console.log('script.js loaded, initializing observer');
+// manual per‑section scroll
+const texts = document.querySelectorAll('.text');
 
-const slides = document.querySelectorAll('.text-slide');
-if (!slides.length) console.error('No slides found! Check your HTML.');
+function onScroll() {
+  const scrollY = window.scrollY;
+  const vh = window.innerHeight;
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle('active', entry.isIntersecting);
-    console.log(`Slide "${entry.target.textContent}" intersecting:`, entry.isIntersecting);
+  texts.forEach((el, i) => {
+    const start = vh * i;
+    const end   = start + vh;
+
+    if (scrollY >= start && scrollY < end) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
   });
-}, {
-  threshold: 0.5
-});
+}
 
-slides.forEach(slide => {
-  observer.observe(slide);
-  console.log('Observing slide:', slide.textContent);
-});
+window.addEventListener('scroll', onScroll);
+// trigger initially
+onScroll();
