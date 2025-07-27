@@ -5,7 +5,7 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #222; /* fallback background color */
+  background: #262626; /* fallback background color */
   perspective: 800px;
 }
 
