@@ -50,8 +50,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;       /* full screen too */
-  background: #111;    /* or whatever */
+  height: 100vh;   
+  background: #262626;   
 }
 .block-container {
   max-width: 600px;
