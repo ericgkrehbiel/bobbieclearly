@@ -83,7 +83,7 @@ body {
   justify-content: center;
   min-height: 100vh;         /* full‑screen height */
   padding: 2rem;
-  background: #1a1a1a;       /* or whatever you like */
+  background: #262626 url('second visual.png') center/cover no-repeat;;       /* or whatever you like */
   color: white;
   text-align: center;
 }
