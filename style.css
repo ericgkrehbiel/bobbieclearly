@@ -52,6 +52,10 @@ body {
   font-size: clamp(3rem, 7vw, 4rem);
 }
 
+.hero2 .line {
+  font-size: clamp(1rem, 2.5vw, 2rem); /* making section 3 text smaller */
+}
+
 
 /* normal text block */
 .text-block {
