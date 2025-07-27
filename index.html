@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zoom Text Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zoom‑Toward‑Viewer Scroller</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="scene">
-    <section class="slide">
-      <div class="text">First line of text</div>
-    </section>
-    <section class="slide">
-      <div class="text">Second line of text</div>
-    </section>
-    <section class="slide">
-      <div class="text">Third line of text</div>
-    </section>
-    <!-- Add more <section class="slide">…</section> as needed -->
-  </div>
+  <!-- this empty div simply gives the page enough vertical scroll -->
+  <div class="scene"></div>
+
+  <!-- our single, fixed text container -->
+  <div class="text-fixed"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
