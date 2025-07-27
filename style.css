@@ -1,25 +1,19 @@
-/* reset + backdrop + 3D */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #262626 url('website headline visual.png') center/cover no-repeat;
-  perspective: 800px;
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  height:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
+  background:#262626 url('website headline visual.png') center/cover no-repeat;
+  perspective:800px;
 }
-
-/* scene height will be set dynamically by JS */
-.scene { }
-
-/* fixed, centered text */
-.text-fixed {
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) translateZ(-200px) scale(0.5);
-  opacity: 0;
-  font-size: 2rem;
-  color: #fff;
-  white-space: nowrap;
-  will-change: transform, opacity;
+.scene{}
+.text-fixed{
+  position:fixed; top:50%; left:50%;
+  transform:translate(-50%,-50%) translateZ(-200px) scale(0.5);
+  opacity:0;
+  font-size:2rem;
+  color:#fff;
+  white-space:nowrap;
+  will-change:transform,opacity;
+  z-index:10;
 }
-
