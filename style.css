@@ -190,28 +190,36 @@ body {
   }
 
   /* 3) Email form & copy tweaks */
-  .email-collect {
-  height: 100vh !important;
-  min-height: 100vh !important;
-  padding: 1rem;             /* some breathing room */
-  display: flex;             /* Flexbox to space elements */
-  flex-direction: column;
+.email-collect {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
   }
+  /* group headline + subhead + form together */
   .email-collect > h2,
   .email-collect > p,
   .email-collect > form {
-  position: relative !important;
-  top: 0 !important;
-  margin: 0.5rem 0;
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 0.75rem;
   }
+  /* push the fine‑print down */
+  .email-collect .section4-text {
+    margin-top: auto;
+    padding-bottom: 1rem;
+  }
+
+  /* form field sizing */
   .email-collect input[type="email"],
   .email-collect button {
     font-size: 0.9rem;
     padding: 0.75em 1em;
   }
-  /* make the button text visible */
+  /* button text color */
   .email-collect button {
-    color: #262626;       /* dark text on white bg */
+    color: #262626;
   }
 
   /* 4) Smaller fine print */
