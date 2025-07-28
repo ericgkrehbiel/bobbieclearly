@@ -27,8 +27,20 @@ window.addEventListener('load', () => {
     });
 
     lines.forEach((el, i) => {
-      if (i === 0) {
-        // only fade‑out & zoom‑out
+      if (selector === '.hero3') {
+        // for the single-line hero3: fade-in + zoom-in then fade-out + zoom-out
+        tl.fromTo(el,
+          { opacity: 0, scale: 1 },
+          { opacity: 1, scale: 1.5, duration: heroDuration, ease: 'power1.inOut' }
+        );
+        tl.to(el, {
+          opacity: 0,
+          scale:   2,
+          duration: heroDuration,
+          ease:    'power1.inOut'
+        });
+      } else if (i === 0) {
+        // only fade‑out & zoom‑out for first line of other heroes
         tl.to(el, {
           opacity: 0,
           scale:   2,
