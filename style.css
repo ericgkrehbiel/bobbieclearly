@@ -191,12 +191,11 @@ body {
 
   /* 3) Email form & copy tweaks */
   .email-collect {
-height: 100vh !important;
+  height: 100vh !important;
   min-height: 100vh !important;
   padding: 1rem;             /* some breathing room */
   display: flex;             /* Flexbox to space elements */
   flex-direction: column;
-  justify-content: space-between;     /* allow natural height */
   }
   .email-collect > h2,
   .email-collect > p,
