@@ -69,9 +69,9 @@ window.addEventListener('load', () => {
       // allow text to wrap & hyphenate on mobile
       gsap.utils.toArray('.hero .line').forEach(el => {
         el.style.whiteSpace   = 'normal';
-        el.style.hyphens      = 'auto';
-        el.style.overflowWrap = 'break-word';
-        el.style.wordBreak    = 'break-word';
+        el.style.hyphens      = 'none';
+        el.style.overflowWrap = 'normal';
+        el.style.wordBreak    = 'normal';
       });
     }
 
