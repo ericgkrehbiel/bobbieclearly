@@ -129,3 +129,7 @@ body {
   color: white;
 }
 
+/* 3) Shrink the font in your “section4-text” block */
+.section4-text p {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+}
