@@ -16,8 +16,9 @@ window.addEventListener('load', () => {
     const segments = 1 + (lines.length - 1) * 2;
     const totalScroll = segments * heroDuration * heroSpacing;
 
-    // center all lines & reset their opacity/scale
+    // center and reset all lines: position left 50% + shift back by 50% width
     gsap.set(lines, {
+      left: '50%',
       xPercent: -50,
       transformOrigin: 'center center',
       opacity: 0,
