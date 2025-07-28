@@ -172,11 +172,11 @@ body {
 @media (max-width: 600px) {
   /* 1) Let text fill more of the screen & shrink it down */
   .hero .text-container {
-    width: 90vw !important;          /* almost full‑width */
+    width: 80vw !important;          /* almost full‑width */
     top: 35%;             /* move up a bit */
     left: 50% !important;
     transform: translateX(-50%) !important;
-    max-width: 90vw !important;      /* override desktop cap */
+    max-width: 350px !important;      /* override desktop cap */
     padding: 0 1rem !important;
     box-sizing: border-box !important;
   }
