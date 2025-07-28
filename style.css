@@ -30,7 +30,7 @@ body {
 .hero .text-container {
   position: absolute;
   top: 40%; left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 60vw;            /* ensure full viewport width for centering */
   max-width: 600px;
   text-align: center;     /* center-align text inside */
@@ -171,6 +171,8 @@ body {
   .hero .text-container {
     width: 90vw !important;          /* almost full‑width */
     top: 35%;             /* move up a bit */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     max-width: 90vw !important;      /* override desktop cap */
     padding: 0 1rem !important;
     box-sizing: border-box !important;
