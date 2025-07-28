@@ -218,37 +218,5 @@ height: 100vh !important;
     font-size: clamp(0.75rem, 3vw, 1rem);
     line-height: 1.4;
   }
-
-/* Disable pinning + absolute for mobile, let text flow */
-.hero {
-  position: static !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-.hero .text-container {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-  width: 90vw;             /* nearly full width */
-  max-width: none;
-  padding: 0 1rem;         /* horizontal padding */
-}
-.hero .line {
-  position: relative !important;
-  opacity: 1 !important;   /* always visible */
-  transform: none !important;
-  width: auto;
-  display: block;
-  margin: 0.5em 0;         /* space between lines */
-  font-size: clamp(1rem, 6vw, 1.25rem); /* adjust as you prefer */
-  white-space: normal;     /* allow wrapping */
-  overflow-wrap: break-word;
-}
-/* headline tweak */
-.hero .first-line {
-  font-size: clamp(2rem, 10vw, 3rem);
-}
-
 }
 
