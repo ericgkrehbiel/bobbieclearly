@@ -189,13 +189,19 @@ body {
 
   /* 3) Email form & copy tweaks */
   .email-collect {
-    padding: 1rem;
-    min-height: auto;     /* allow natural height */
+height: 100vh !important;
+  min-height: 100vh !important;
+  padding: 1rem;             /* some breathing room */
+  display: flex;             /* Flexbox to space elements */
+  flex-direction: column;
+  justify-content: space-between;     /* allow natural height */
   }
   .email-collect > h2,
   .email-collect > p,
   .email-collect > form {
-    top: -5vh;            /* less aggressive lift */
+  position: relative !important;
+  top: 0 !important;
+  margin: 0.5rem 0;
   }
   .email-collect input[type="email"],
   .email-collect button {
