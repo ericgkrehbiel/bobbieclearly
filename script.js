@@ -3,8 +3,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
-  const heroDuration = 1;     // seconds per in/out
-  const heroSpacing  = 900;   // px per second of scrub
+  const heroDuration = 1;    // seconds per in/out
+  const heroSpacing  = 900;  // px per second of scrub
 
   /**
    * Helper: set up scroll-driven fade/zoom on each line in the hero.
@@ -16,7 +16,15 @@ window.addEventListener('load', () => {
     const segments = 1 + (lines.length - 1) * 2;
     const totalScroll = segments * heroDuration * heroSpacing;
 
-    // initial state: first line visible at 'in' scale
+    // center all lines & reset their opacity/scale
+    gsap.set(lines, {
+      xPercent: -50,
+      transformOrigin: 'center center',
+      opacity: 0,
+      scale: 1
+    });
+
+    // make the first line visible at in-scale
     gsap.set(lines[0], { opacity: 1, scale: scaleIn });
 
     const tl = gsap.timeline({
@@ -31,12 +39,13 @@ window.addEventListener('load', () => {
       }
     });
 
-    lines.forEach((el, i) => {
-      const fadeIn  = { opacity: 1,  scale: scaleIn,  duration: heroDuration, ease: 'power1.inOut' };
-      const fadeOut = { opacity: 0,  scale: scaleOut, duration: heroDuration, ease: 'power1.inOut' };
+    // define fade/zoom tweens (only opacity & scale, so xPercent stays intact)
+    const fadeIn  = { opacity: 1, scale: scaleIn, duration: heroDuration, ease: 'power1.inOut' };
+    const fadeOut = { opacity: 0, scale: scaleOut, duration: heroDuration, ease: 'power1.inOut' };
 
+    lines.forEach((el, i) => {
       if (selector === '.hero3') {
-        // hero3: a single-line block fades in & out
+        // hero3: single-line fade in & out
         tl.fromTo(el, { opacity: 0, scale: 1 }, fadeIn);
         tl.to(el, fadeOut);
       } else if (i === 0) {
@@ -58,17 +67,17 @@ window.addEventListener('load', () => {
   }, context => {
     const { isMobile } = context.conditions;
 
-    // On mobile, allow each <p.line> block to wrap internally
     if (isMobile) {
+      // allow text to wrap & hyphenate on mobile
       gsap.utils.toArray('.hero .line').forEach(el => {
-        el.style.whiteSpace     = 'normal';
-        el.style.hyphens        = 'auto';
-        el.style.overflowWrap   = 'break-word';
-        el.style.wordBreak      = 'break-word';
+        el.style.whiteSpace   = 'normal';
+        el.style.hyphens      = 'auto';
+        el.style.overflowWrap = 'break-word';
+        el.style.wordBreak    = 'break-word';
       });
     }
 
-    // Define zoom levels:
+    // choose zoom levels
     const mobileScaleIn   = 1.2;
     const mobileScaleOut  = 1.6;
     const desktopScaleIn  = 1.5;
@@ -76,12 +85,12 @@ window.addEventListener('load', () => {
     const scaleIn  = isMobile ? mobileScaleIn  : desktopScaleIn;
     const scaleOut = isMobile ? mobileScaleOut : desktopScaleOut;
 
-    // Wire up heroes with these scales
+    // initialize each hero
     setupHero('.hero1', { scaleIn, scaleOut });
     setupHero('.hero3', { scaleIn, scaleOut });
     setupHero('.hero2', { scaleIn, scaleOut });
 
-    // Refresh ScrollTrigger to pick up style changes
+    // refresh triggers after style changes
     ScrollTrigger.refresh();
   });
 
