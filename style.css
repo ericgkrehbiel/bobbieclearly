@@ -173,11 +173,11 @@ body {
 @media (max-width: 600px) {
   /* 1) Let text fill more of the screen & shrink it down */
   .hero .text-container {
-    width: 80vw !important;          /* almost full‑width */
-    top: 35%;             /* move up a bit */
+    width: 70vw !important;          /* almost full‑width */
+    top: 33%;             /* move up a bit */
     left: 50% !important;
     transform: translateX(-50%) !important;
-    max-width: 350px !important;      /* override desktop cap */
+    max-width: 300px !important;      /* override desktop cap */
     padding: 0 1rem !important;
     box-sizing: border-box !important;
   }
@@ -185,6 +185,7 @@ body {
     /* smaller clamps: 1rem min, up to ~1.2rem */
     transform: translateX(-50%) scale(1);
     font-size: clamp(0.75rem, 5vw, 1rem);
+    line-height: 1.4;
   }
   .hero .first-line {
     /* headline slightly smaller but still punchy */
