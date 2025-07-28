@@ -208,8 +208,8 @@ body {
   }
   /* push the fine‑print down */
   .email-collect .section4-text {
-    margin-top: auto;
-    padding-bottom: 1rem;
+    margin-top: 0;
+    padding-bottom: 0;
   }
 
   /* form field sizing */
