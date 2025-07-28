@@ -182,7 +182,7 @@ body {
   }
   .hero .line {
     /* smaller clamps: 1rem min, up to ~1.2rem */
-    font-size: clamp(1rem, 6vw, 1.25rem);
+    font-size: clamp(0.75rem, 5vw, 1rem);
   }
   .hero .first-line {
     /* headline slightly smaller but still punchy */
