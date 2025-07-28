@@ -132,7 +132,6 @@ body {
 .section4-text {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
 }
 
@@ -147,20 +146,3 @@ body {
   line-height: 1.4;
   color: #ddd;
 }
-
-/* Section 4: block above the form */
-.section4-preform {
-  margin-bottom: 1.5rem;         /* space down to the form */
-  padding: 1rem 1.5rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 6px;
-  text-align: center;
-}
-
-.section4-preform p {
-  margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  line-height: 1.4;
-  color: #ddd;
-}
-
