@@ -133,3 +133,10 @@ body {
 .section4-text p {
   font-size: clamp(0.875rem, 2vw, 1.125rem);
 }
+
+.email-collect .section4-text {
+  max-width: 600px;   /* never wider than 600px */
+  width: 90%;         /* but fill up to 90% of the viewport */
+  margin: 2rem auto;  /* vertical spacing + auto left/right centering */
+  text-align: center; /* keep the text centered inside the box */
+}
