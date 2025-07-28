@@ -140,3 +140,12 @@ body {
   margin: 2rem auto;  /* vertical spacing + auto left/right centering */
   text-align: center; /* keep the text centered inside the box */
 }
+
+/* Lift the heading, subhead and form up in the viewport */
+.email-collect > h2,
+.email-collect > p,        /* the “Be the first…” line */
+.email-collect > form {
+  position: relative;
+  top: -15vh;             /* ← move up by 15% of viewport height */
+}
+
