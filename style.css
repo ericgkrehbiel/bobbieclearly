@@ -41,7 +41,7 @@ body {
   position: absolute;
   width: 100%;
   max-width: 100%;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   box-sizing: border-box;
   margin: 0;
   text-align: center;     /* center-align each line */
