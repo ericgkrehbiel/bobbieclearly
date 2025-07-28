@@ -18,9 +18,6 @@ window.addEventListener('load', () => {
 
     // center and reset all lines: position left 50% + shift back by 50% width
     gsap.set(lines, {
-      left: '50%',
-      xPercent: -50,
-      transformOrigin: 'center center',
       opacity: 0,
       scale: 1
     });
