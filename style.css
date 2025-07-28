@@ -146,6 +146,6 @@ body {
 .email-collect > p,        /* the “Be the first…” line */
 .email-collect > form {
   position: relative;
-  top: -15vh;             /* ← move up by 15% of viewport height */
+  top: -25vh;             /* ← move up by 15% of viewport height */
 }
 
