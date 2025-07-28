@@ -31,7 +31,8 @@ body {
   position: absolute;
   top: 40%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;            /* ensure full viewport width for centering */
+  width: 80vw;            /* ensure full viewport width for centering */
+  max-width: 600px;
   text-align: center;     /* center-align text inside */
   z-index: 1;             /* above the background */
 }
@@ -54,6 +55,7 @@ body {
 
 .hero2 .line {
   font-size: clamp(1rem, 2vw, 2rem); /* making section 3 text smaller */
+  width: 100%;
 }
 
 
