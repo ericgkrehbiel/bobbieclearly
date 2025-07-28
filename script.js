@@ -54,19 +54,8 @@ window.addEventListener('load', () => {
 
   // wire up both hero sections
   setupHero('.hero1');
+  setupHero('.hero3');
   setupHero('.hero2');
-
-  // section 2 “normal text” stays the same
-  gsap.to('.section-text', {
-    scrollTrigger: {
-      trigger: '.text-block',
-      start:  'top 80%',
-      end:    'bottom 20%',
-      scrub:  true
-    },
-    scale: 1.1,
-    ease:  'none'
-  });
 
   // ensure ScrollTrigger recalcs after everything’s loaded
   ScrollTrigger.refresh();
