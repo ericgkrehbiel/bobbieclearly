@@ -159,3 +159,8 @@ body {
   background: #232323;  /* solid dark background */
   z-index: 0;
 }
+
+/* hide the text initially on load */
+.hero3 .line {
+  opacity: 0;
+}
