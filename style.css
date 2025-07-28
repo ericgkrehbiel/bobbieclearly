@@ -196,6 +196,7 @@ body {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    padding: 20vh 1rem 10vh; /* 20vh top, 10vh bottom */
   }
   /* group headline + subhead + form together */
   .email-collect > h2,
