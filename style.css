@@ -164,3 +164,53 @@ body {
 .hero3 .line {
   opacity: 0;
 }
+
+/* MOBILE STYLING */
+@media (max-width: 600px) {
+  /* 1) Let text fill more of the screen & shrink it down */
+  .hero .text-container {
+    width: 90vw;          /* almost full‑width */
+    top: 35%;             /* move up a bit */
+    max-width: none;      /* override desktop cap */
+  }
+  .hero .line {
+    /* smaller clamps: 1rem min, up to ~1.2rem */
+    font-size: clamp(1rem, 6vw, 1.25rem);
+  }
+  .hero .first-line {
+    /* headline slightly smaller but still punchy */
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  /* 2) Shrink section‑3 one‑liners too */
+  .hero3 .line {
+    font-size: clamp(1rem, 7vw, 1.2rem);
+  }
+
+  /* 3) Email form & copy tweaks */
+  .email-collect {
+    padding: 1rem;
+    min-height: auto;     /* allow natural height */
+  }
+  .email-collect > h2,
+  .email-collect > p,
+  .email-collect > form {
+    top: -5vh;            /* less aggressive lift */
+  }
+  .email-collect input[type="email"],
+  .email-collect button {
+    font-size: 0.9rem;
+    padding: 0.75em 1em;
+  }
+  /* make the button text visible */
+  .email-collect button {
+    color: #262626;       /* dark text on white bg */
+  }
+
+  /* 4) Smaller fine print */
+  .section4-text p {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    line-height: 1.4;
+  }
+}
+
