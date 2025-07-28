@@ -72,3 +72,16 @@ window.addEventListener('load', () => {
   // ensure ScrollTrigger recalcs after everything’s loaded
   ScrollTrigger.refresh();
 });
+
+const form = document.querySelector('#emailCapture');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const res = await fetch('https://script.google.com/macros/s/AKfycbzN8nre4kwRasksLo_2mh5lu-z2xejyg3twYdZ2QH8KUlvGLwwbF5Li7auwiWNLVDZehA/exec', {
+    method: 'POST',
+    body: data
+  });
+  const json = await res.json();
+  if (json.success) alert('Thanks, you’re signed up!');
+  else alert('Oops: ' + json.error);
+});
