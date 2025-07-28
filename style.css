@@ -149,17 +149,3 @@ body {
   top: -25vh;             /* ← move up by 15% of viewport height */
 }
 
-.text-block {
-  position: relative;     /* for absolute children */
-  overflow: hidden;       /* hide the part that scrolls out */
-}
-
-/* center & constrain your content */
-.text-block .block-container {
-  position: absolute;     /* we’ll animate this up/down */
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 80vw;
-  max-width: 600px;
-}
-
