@@ -41,13 +41,13 @@ body {
   position: absolute;
   width: 100%;
   max-width: 100%;
-  overflow-wrap: break-word;
   box-sizing: border-box;
   margin: 0;
   text-align: center;     /* center-align each line */
   font-size: clamp(1.5rem, 4vw, 2rem);
   opacity: 0;
-  transform: scale(1);
+ transform: translateX(-50%) scale(1);
+  transform-origin: center center;
   color: white;           /* make text white */
 }
 
