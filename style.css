@@ -199,6 +199,14 @@ body {
                 center/cover 
                 no-repeat !important;
   }
+
+  .hero2 .background {
+    /* change to your mobile image: */
+    background: #262626 
+                url('second visual-mobile.png') 
+                center/cover 
+                no-repeat !important;
+  }
   
   /* 2) Shrink section‑3 one‑liners too */
   .hero3 .line {
