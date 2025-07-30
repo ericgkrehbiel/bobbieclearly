@@ -192,6 +192,14 @@ body {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
+    .hero1 .background {
+    /* change to your mobile image: */
+    background: #262626 
+                url('headline website visual-mobile.png') 
+                center/cover 
+                no-repeat !important;
+  }
+  
   /* 2) Shrink section‑3 one‑liners too */
   .hero3 .line {
     font-size: clamp(1rem, 7vw, 1.2rem);
