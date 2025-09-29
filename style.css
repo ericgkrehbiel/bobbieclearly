@@ -19,6 +19,45 @@ body {
   z-index: 0; /* behind the text */
 }
 
+/* Static donate button in first fold */
+.hero1 .donate-btn {
+  position: absolute;
+  left: 50%;
+  top: 66vh;                /* ~two-thirds down the viewport */
+  transform: translateX(-50%);
+  z-index: 2;               /* above .text-container (z-index:1) and background (0) */
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 600;
+  text-decoration: none;
+  background: #ffffff;
+  color: #262626;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+
+.hero1 .donate-btn:hover {
+  transform: translateX(-50%) translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+.hero1 .donate-btn:active {
+  transform: translateX(-50%) translateY(0);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Mobile tuning: nudge slightly lower and make it easier to tap */
+@media (max-width: 600px) {
+  .hero1 .donate-btn {
+    top: 70vh;
+    padding: 0.9rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+
 .hero2 .background {
   position: absolute;
   top: 0; left: 0;
