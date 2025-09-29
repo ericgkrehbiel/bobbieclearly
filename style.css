@@ -19,13 +19,21 @@ body {
   z-index: 0; /* behind the text */
 }
 
-/* Static donate button in first fold */
-.hero1 .donate-btn {
+/* Position the CTA ~2/3 down the first fold */
+.hero1 .donate-cta {
   position: absolute;
   left: 50%;
-  top: 66vh;                /* ~two-thirds down the viewport */
+  top: 66vh;                 /* two-thirds down the viewport */
   transform: translateX(-50%);
-  z-index: 2;               /* above .text-container (z-index:1) and background (0) */
+  z-index: 2;                /* above text (1) and bg (0) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;              /* space between button and note */
+}
+
+/* Existing button styles are fine—keep yours or this: */
+.hero1 .donate-btn {
   display: inline-block;
   padding: 0.9rem 1.4rem;
   border-radius: 999px;
@@ -35,26 +43,34 @@ body {
   background: #ffffff;
   color: #262626;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.hero1 .donate-btn:hover { transform: translateY(-1px); }
+
+/* New: the small explainer line */
+.hero1 .donate-note {
+  margin: 0;
+  max-width: min(80vw, 520px);
+  text-align: center;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  line-height: 1.35;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);   /* readable on imagery */
 }
 
-.hero1 .donate-btn:hover {
-  transform: translateX(-50%) translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-}
-
-.hero1 .donate-btn:active {
-  transform: translateX(-50%) translateY(0);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* Mobile tuning: nudge slightly lower and make it easier to tap */
+/* Mobile tweak: nudge slightly lower for thumbs */
 @media (max-width: 600px) {
-  .hero1 .donate-btn {
-    top: 70vh;
-    padding: 0.9rem 1.25rem;
-    font-size: 1rem;
-  }
+  .hero1 .donate-cta { top: 70vh; gap: 0.6rem; }
+  .hero1 .donate-note { max-width: 88vw; }
+}
+
+/* Optional a11y polish */
+.hero1 .donate-btn:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero1 .donate-btn { transition: none; }
 }
 
 
